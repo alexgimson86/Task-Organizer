@@ -1,0 +1,11 @@
+.completed {
+    text-decoration: line-through;
+    color: red;
+}
+.myCalendar{
+    position: absolute;
+    left: 30%;
+}
+.calendarIcon{
+height: 20px;
+}
