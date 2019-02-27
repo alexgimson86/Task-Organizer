@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/stylesheet.css';
-import axios from 'axios'
+import axios from 'axios';
+
 
 export default class Countdown extends Component {
     constructor(props) {
@@ -52,15 +53,37 @@ export default class Countdown extends Component {
             days={this.state.days}
             hours={this.state.hours}
             minutes={this.state.minutes}
-            seconds={this.state.seconds} />);
+            seconds={this.state.seconds} />
+        );
 
     }
 }
 const Markup = (props) => {
     if (props.days) {
-        return (<div>
-            <h3>{props.days} days, {props.hours} hours, {props.minutes} minutes, and {props.seconds}      seconds left hurry up!</h3>
-        </div>);
+        return (
+            <div>
+
+                <br />
+                <div id='clockdiv'>
+                    <div>
+                        <span className='days'>{props.days}</span>
+                        <div className='smalltext'>Days</div>
+                    </div>
+                    <div>
+                        <span className='hours'>{props.hours}</span>
+                        <div className='smalltext'>Hours</div>
+                    </div>
+                    <div>
+                        <span>{props.minutes}</span>
+                        <div className='smalltext'>Minutes</div>
+                    </div>
+                    <div>
+                        <span>{props.seconds}</span>
+                        <div className='smalltext'>Seconds left</div>
+                    </div>
+
+                </div>
+            </div>);
     }
     else {
         return ("");

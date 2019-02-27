@@ -32,7 +32,8 @@ componentDidMount(){
        this.setState({
            date : new Date(dateArr[0],dateArr[1].toString(),dateArr[2]),
        })
-   }).catch(error =>{
+   }).catch(error =>
+    {
        console.log(error)
    })
       this.setState({ date: date })
