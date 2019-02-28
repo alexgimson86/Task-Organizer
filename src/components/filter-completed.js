@@ -26,7 +26,7 @@ export default class FilterCompleted extends Component {
         this.state =  { todos: [], set: false }
     }
     componentDidMount(){
-        axios.get("http://localhost:4000/todos").then(res => {
+        axios.get("http://localhost:4000/todos/list").then(res => {
             this.setState((previous) => ({
                 todos: res.data,
                 set: true

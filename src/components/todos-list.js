@@ -18,8 +18,7 @@ const Todo = (props) => {
         <Link to={"/delete/"+props.todo._id}>Delete</Link>
     </td>
     <td><Link to={"/myCalendar/"+props.todo._id}><img src={pic} className="calendarIcon" alt="calendar"/></Link></td>
-</tr>
-);
+</tr>);
 }
 export default class TodosList extends Component {
     constructor(props){
@@ -27,7 +26,7 @@ export default class TodosList extends Component {
         this.state =  { todos: [], set: false }
     }
     componentDidMount(){
-        axios.get("http://localhost:4000/todos").then(res => {
+        axios.get("http://localhost:4000/todos/list").then(res => {
             this.setState((previous) => ({
                 todos: res.data,
                 set: true

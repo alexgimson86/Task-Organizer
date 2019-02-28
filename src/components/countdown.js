@@ -30,11 +30,11 @@ export default class Countdown extends Component {
         else {
             var seconds = Math.floor(difference / 1000);
             var minutes = Math.floor(seconds / 60);
-            var hours = Math.floor(minutes / 60);
-            var days = Math.floor(hours / 24);
-            hours %= 24;
-            minutes %= 60;
-            seconds %= 60;
+            var hours   = Math.floor(minutes / 60);
+            var days    = Math.floor(hours / 24);
+            hours      %= 24;
+            minutes    %= 60;
+            seconds    %= 60;
 
             this.setState({
                 days: days,
@@ -47,8 +47,6 @@ export default class Countdown extends Component {
     }
 
     render() {
-
-
         return (<Markup
             days={this.state.days}
             hours={this.state.hours}
