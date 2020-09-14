@@ -27,10 +27,10 @@ export default class TodosList extends Component {
     }
     componentDidMount(){
         axios.get("http://localhost:4000/todos/list").then(res => {
-            this.setState((previous) => ({
+            this.setState({
                 todos: res.data,
                 set: true
-            }))
+            })
         })
     }
     todoList = () => {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios"
-
+import {withRouter} from 'react-router-dom'
 
 class Login extends Component {
     constructor(props){
@@ -35,6 +35,11 @@ class Login extends Component {
                 if (response.status === 200) {
                     // update App.js state
                     // update the state to redirect to home
+                    let userObject = {
+                        loggedIn: true,
+                        username: this.state.username
+                    }
+                    this.props.updateUser(userObject)
                     this.props.history.push("/list");
                 }
             }).catch(error => {
@@ -72,4 +77,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
